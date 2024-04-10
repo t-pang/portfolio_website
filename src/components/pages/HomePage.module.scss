@@ -1,0 +1,58 @@
+.innerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.innerContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileDetails {
+}
+
+.name {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.job {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  max-width: 450px;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 1600px) {
+  .container {
+    max-width: 968px;
+  }
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 1040px) {
+  .homeContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profileContainer {
+    margin-bottom: 30px;
+  }
+  .profileDetails {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .name {
+    font-size: 30px;
+  }
+  .profileContainer {
+    min-width: 200px;
+    min-height: 200px;
+  }
+}

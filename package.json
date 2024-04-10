@@ -1,6 +1,6 @@
 {
   "name": "portfolio_website",
-  "homepage": "https://github.com/t-pang/portfolio_website",
+  "homepage": "https://t-pang.github.io/portfolio_website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "sass": "^1.74.1"
   }
 }
