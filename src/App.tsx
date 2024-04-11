@@ -1,5 +1,6 @@
 import PageLayout from './components/layout/PageLayout';
 import HomePage from './components/pages/HomePage';
+
 import './App.css';
 
 function App() {

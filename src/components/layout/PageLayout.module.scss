@@ -76,6 +76,18 @@
   position: absolute;
 }
 
+.innerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.innerContent {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 1200px) {
   .layout {
     grid-template-areas:

@@ -4,9 +4,9 @@ export interface IPortfolioPageProps {}
 
 const PortfolioPage = (props: IPortfolioPageProps) => {
   return (
-    <div className="container">
-      <div className={styles.container}></div>
-    </div>
+    <>
+      <h1>Portfolio Page</h1>
+    </>
   );
 };
 

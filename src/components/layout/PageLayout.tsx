@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { combineClasses } from '../../utils/utilities';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
 import styles from './PageLayout.module.scss';
+import { useLocation } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
-export interface IPageLayoutProps {
-  children: React.ReactNode;
-}
+export interface IPageLayoutProps {}
 
-const PageLayout = ({ children }: IPageLayoutProps) => {
+const PageLayout = (props: IPageLayoutProps) => {
+  const location = useLocation();
   const [isSideNavActive, setSideNavActive] = useState(false);
 
   const handleNavActionClick = () => {
@@ -36,13 +38,40 @@ const PageLayout = ({ children }: IPageLayoutProps) => {
         <div className={styles.navInner}>
           <h3>LOGO</h3>
           <ul>
-            <li className={styles.navItem}>Home</li>
-            <li className={styles.navItem}>About Me</li>
-            <li className={styles.navItem}>Portfolio</li>
+            <li>
+              <NavLink className={styles.navItem} to="/">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navItem} to="/">
+                About Me
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.navItem} to="/portfolio">
+                Portfolio
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
-      <div className={styles.main}>{children}</div>
+      <div className={styles.main}>
+        <div className={combineClasses(styles.innerContainer, 'container')}>
+          <div className={styles.innerContent}>
+            <SwitchTransition>
+              <CSSTransition
+                timeout={300}
+                classNames="page"
+                unmountOnExit
+                key={location.key}
+              >
+                <Outlet />
+              </CSSTransition>
+            </SwitchTransition>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
